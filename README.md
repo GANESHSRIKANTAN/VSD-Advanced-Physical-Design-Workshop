@@ -86,10 +86,28 @@ this is the output we get
 
 ![Screenshot (54)](https://user-images.githubusercontent.com/19291332/183238644-bbd89ba2-0384-4fbb-9198-90a122fa44f7.png)
 
+![Screenshot (55)](https://user-images.githubusercontent.com/19291332/183238778-f4e3531c-41a5-40f0-82de-f372142dc647.png)
+
+
+
 
 after running the command 
 
 'magic -T /home/iganesh/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &'
+
+Place & Route :-------------
+
+library consists of size, delay of the cell and requirement of each cell .
+For signal integrity we use cell repeaters 
+
+Final step is Static timing analysis
+
+![Screenshot (57)](https://user-images.githubusercontent.com/19291332/183238836-83b668f9-78b1-40d7-8f0c-416e1731594e.png)
+
+
+
+
+
 
 
 

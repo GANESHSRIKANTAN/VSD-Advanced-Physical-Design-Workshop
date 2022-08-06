@@ -43,7 +43,7 @@ Chip area = 147712.98400
 
 ![Screenshot (36)](https://user-images.githubusercontent.com/19291332/183232043-5c919677-76aa-49ee-8e25-8d80a45932c7.png)
 
-flop ratio = dfxff / total area = 1613 / 14876 
+flop ratio = dfxtp / total area = 1613 / 14876 
  
            = 0.10482 = 10.482 %
 

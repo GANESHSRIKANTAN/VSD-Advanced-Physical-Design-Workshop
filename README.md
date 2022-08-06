@@ -73,6 +73,24 @@ floor planning considerations :-
 
 Based on the diagram above we need to find an optimal floorplan 
 
+WE run the floor plan using the command 
+
+' run_floorplan' 
+
+in the docker window 
+
+![Screenshot (53)](https://user-images.githubusercontent.com/19291332/183238624-327483b6-96aa-4fdf-b698-2b94ad67588e.png)
+
+
+this is the output we get 
+
+![Screenshot (54)](https://user-images.githubusercontent.com/19291332/183238644-bbd89ba2-0384-4fbb-9198-90a122fa44f7.png)
+
+
+after running the command 
+
+'magic -T /home/iganesh/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &'
+
 
 
 

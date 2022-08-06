@@ -51,5 +51,19 @@ flop ratio = dfxtp / total area = 1613 / 14876
 
 # Day 2 :- Good floorplan vs bad floorplan and introduction to library cells 
 
+Floorplanning involves determining the locations, shape, size of modules in a chip and as such it estimates the chip area, delay and the wiring congestion, thereby providing a ground work for layout
+
+Each chip has a die area and a core area. Die area encapsulates core area.
+
+utilisation is defined as the ratio of the area occupied by the netlist / the area occupied by the core 
+
+Aspect ratio is defined as the ratio of the height of the chip and the width of the chip 
+
+There are pre-placed chips in every circuit designs ( for examples SDRAMS, clocks , Adders etc ) 
+
+These have a specific location and size in the chip - not to be messed with 
+
+
+
 
 

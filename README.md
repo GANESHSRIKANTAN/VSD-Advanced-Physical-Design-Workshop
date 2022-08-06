@@ -64,6 +64,16 @@ There are pre-placed chips in every circuit designs ( for examples SDRAMS, clock
 These have a specific location and size in the chip - not to be messed with 
 
 
+floor planning considerations :- 
+
+1. IPs 2. Decoupling capacitors 3. Power rails 4. pins and its placement 
+
+![Screenshot (52)](https://user-images.githubusercontent.com/19291332/183238519-d932e1e7-dabd-4148-831a-ffa4cd62f12e.png)
+
+
+Based on the diagram above we need to find an optimal floorplan 
+
+
 
 
 

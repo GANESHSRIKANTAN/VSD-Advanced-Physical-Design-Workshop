@@ -159,12 +159,18 @@ run
 To obtain the netlist for an inverter, we do the following 
 1. Firstly clone the repository https://github.com/nickson-jose/vsdstdcelldesign.git
                      
-3. open magic by using the command
+2. open magic by using the command
 
 ``` magic ``` 
 
 in the terminal.
 
+3. Open file 'sky130_inv.mag' , you will get the layout like this 
+![Screenshot (63)](https://user-images.githubusercontent.com/19291332/183274036-aaf813bc-27f9-4cb2-bfff-da0002ad6e05.png)
+
+
+
+    
 
 
 

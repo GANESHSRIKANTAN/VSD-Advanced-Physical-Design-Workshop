@@ -156,6 +156,17 @@ run
 
 ```
 
+To obtain the netlist for an inverter, we do the following 
+1. Firstly clone the repository https://github.com/nickson-jose/vsdstdcelldesign.git
+                     
+3. open magic by using the command
+
+``` magic ``` 
+
+in the terminal.
+
+
+
 
 
 

@@ -123,7 +123,7 @@ The aim of the lab exercise is to find out the rise and fall times
 
 We describe the netlist and the models reqired to simulate an cmos inverter 
 
-'
+```
 
 * SPICE3 file created from sky130_inv.ext - technology: sky130A
 
@@ -154,7 +154,7 @@ run
 .endc
 .end
 
-'
+```
 
 
 

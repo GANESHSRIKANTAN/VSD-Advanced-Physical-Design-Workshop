@@ -104,6 +104,18 @@ Final step is Static timing analysis
 
 ![Screenshot (57)](https://user-images.githubusercontent.com/19291332/183238836-83b668f9-78b1-40d7-8f0c-416e1731594e.png)
 
+# Day 3 :- Design library cell using Magic Layout and ngspice characterization
+
+In day 3, we learn how we can make changes to the floor plan and modify the spacing of the IO pins in the chip on the fly 
+
+For exammple - To change the spacing of the io pins we use 
+
+                                      set ::env( FP_IO_MODE) 2
+                                      
+To change the spacing from equidistant to crowded 
+
+SPICE Simulation :- 
+
 
 
 

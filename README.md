@@ -166,7 +166,70 @@ To obtain the netlist for an inverter, we do the following
 in the terminal.
 
 3. Open file 'sky130_inv.mag' , you will get the layout like this 
+
+
 ![Screenshot (63)](https://user-images.githubusercontent.com/19291332/183274036-aaf813bc-27f9-4cb2-bfff-da0002ad6e05.png)
+
+4. Then go to the tkcon terminal ( the console for magic ) and type the following commands one by one 
+
+ ```
+ extract all
+ 
+ ext2spice cthresh 0 rthresh 0
+ 
+ ext2spice 
+ 
+ ```
+ ![Screenshot (64)](https://user-images.githubusercontent.com/19291332/183274100-c508919a-996a-4d54-bbef-faec7c5c0838.png)
+ 
+ 5. Now you will be able to find  the sky130_in.spice file generated
+
+Edit the file as shown before
+
+After saving, go to terminal and type 
+
+``` ngspice sky130_inv.spice  ```
+
+This will run the ngspice command 
+
+![Screenshot (65)](https://user-images.githubusercontent.com/19291332/183274170-9f62c2d0-f965-4b03-b0ed-3ad09323fb4a.png)
+
+Then in the same terminal type 
+
+``` plot a y ``` 
+
+to get input and output waveform 
+
+![Screenshot (66)](https://user-images.githubusercontent.com/19291332/183274194-1d0635c2-8692-43b8-818a-f3be5d0d6a60.png)
+
+To calculate rise time , we take the rising edge of the output ( y) and the falling edge of the input (a) at Vm = 1.65 ( 3.3 volts / 2 ) 
+
+WE measure the time difference at v = 1.65V 
+
+![Screenshot (67)](https://user-images.githubusercontent.com/19291332/183274284-5fbebafa-946e-46c4-93de-1e1f55e2702b.png)
+
+
+To calculate fall time , we take the falling edge of the output ( y) and the rising edge of the input (a) at Vm = 1.65 ( 3.3 volts / 2 ) 
+
+WE measure the time difference at v = 1.65V 
+
+
+![Screenshot (68)](https://user-images.githubusercontent.com/19291332/183274323-f14afeb7-399e-4838-ae58-fef49db2e8ec.png)
+
+
+RISE DELAY = 2.209 - 2.150 ns = 0.059 ns or 59 ps
+
+FALL DELAY = 4.074 - 4.050 ns = 0.024 ns or 24 ps 
+
+
+
+
+
+
+ 
+ 
+
+ 
 
 
 

@@ -114,10 +114,47 @@ For exammple - To change the spacing of the io pins we use
                                       
 To change the spacing from equidistant to crowded 
 
-SPICE Simulation :- 
+## SPICE Simulation :- 
+
+We are using ngspice to perform simulation for a cmos inverter. 
+The aim of the lab exercise is to find out the rise and fall times 
+
+### ngSPICE :- 
+
+We describe the netlist and the models reqired to simulate an cmos inverter 
+
+'
+
+* SPICE3 file created from sky130_inv.ext - technology: sky130A
+
+.option scale= 0.01u
+.include ./libs/pshort.lib
+.include ./libs/nshort.lib
 
 
 
+
+
+M1 Y A VPWR VPWR pshort_model.0 ad=0 pd=0 ps=0 w=35 l=23
+M2 Y A VGND VGND nshort_model.0 ad=0 pd=0 ps=0 w=37 l=23
+
+VDD VPWR 0 3.3V
+VSS VGND 0 0V
+
+VA A VGND PULSE(0V 3.3V 0 0.1ns 0.1ns 2ns 4ns)
+C0 A Y 0.05fF
+C1 Y VPWR 0.11fF
+C2 A VPWR 0.07fF
+C3 y  VGND 2fF
+C4 VPWR VGND 0.59fF
+
+.TRAN 1n 20n
+.control
+run
+.endc
+.end
+
+'
 
 
 

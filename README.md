@@ -276,6 +276,41 @@ After running floorplan and getting the LEF file we can open and see the layout 
 ![Screenshot (90)](https://user-images.githubusercontent.com/19291332/183337010-7a662e3f-5157-4078-b769-0599d0f44fad.png)
 
 
+## Timing Analysis using OpenSTA :
+
+The Static Timing Analysis(STA) of the design is carried out using the OpenSTA tool. The analysis can be done in to different ways.
+
+Inside OpenLANE flow: This is by invoking openroad command inside the OpenLANE flow. In the openroad OpenSTA is invoked.
+Outside OpenLANE flow: This is done by directly invoking OpenSTA in the command line. This requires extra configuration to be done to specific the verilog file, constraints, clock period and other required parameters.
+
+![Screenshot (89)](https://user-images.githubusercontent.com/19291332/183337473-f0387ec6-fa08-46f3-8fef-4a2cd25b1318.png)
+
+
+To reduce the timing slack we use strategies like 
+
+1. Prioritise delay over area optimisation . This can be done by 
+
+   ` set ::env(SYNTH_STRATEGY) "DELAY 1" `
+   
+ This flag tells the program to take care of delay at the cost of increase in area
+ 
+2. ` set ::env(SYNTH_SIZING) 1 ` CHANGES THE SIZE OF VARIOUS CELLS TO REDUCE DELAY 
+
+That increased the are to 209181.872 but there was no negative slack
+
+---------------------------------------------------------------------------------------------------------------------
+
+After this we run `run_cts`
+
+Hold slack is met 
+
+![Screenshot (103)](https://user-images.githubusercontent.com/19291332/183338287-89678302-6dbb-402c-8d6e-a79cca1fafaa.png)
+
+setup slack is violated. This can be corrected by changing clock frequency ( lower ) 
+
+![Screenshot (104)](https://user-images.githubusercontent.com/19291332/183338365-539f8cf6-c13e-4875-8c91-e98493fe88d1.png)
+
+
 
 
 

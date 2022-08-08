@@ -222,6 +222,64 @@ RISE DELAY = 2.209 - 2.150 ns = 0.059 ns or 59 ps
 FALL DELAY = 4.074 - 4.050 ns = 0.024 ns or 24 ps 
 
 
+# DAY 4 : Prelayout and Good Clock Tree Synthesis :
+
+To design a standard cell layout in OpenLANE RTL2GDS flow,we usea  standard cell LEF. LEF stands for Library Exchange Format. The entire design has to be analyzed for any timing violations after addition or change in the design.
+
+## Conversion to LEF
+
+WE first open tracks.info to get the layout boundary. 
+
+The grid needs to be inserted into the layout file ( MAGIC ). 
+
+WE make sure we have our standard ell within the boundaries lilx and lily 
+
+Other considerations are that we the cell width should be an odd multiple of xpitch
+
+![Screenshot (63)](https://user-images.githubusercontent.com/19291332/183336150-26c9c4be-e263-49ca-8717-4c6198b22813.png)
+
+Inverter Layout 
+
+----------------------------------------------------------------------------
+
+By selecting the particular layer and typing 'what' in the mycon terminal 
+
+![Screenshot (71)](https://user-images.githubusercontent.com/19291332/183336276-9df73bba-d960-459b-8c7a-30a5e2ee2681.png)
+
+we get the layers
+
+![Screenshot (76)](https://user-images.githubusercontent.com/19291332/183336345-f9e678e7-6c70-48de-a394-b7ac6f291d02.png)
+
+type `grid { values}  ` as shown in the picture to get grids 
+
+![Screenshot (79)](https://user-images.githubusercontent.com/19291332/183336435-5297369e-8a4f-4f0d-abe7-7f695f0f2aea.png)
+
+Select each pin for the inverter and define their port class and port use case as shown in the picture 
+
+save this mag file to .mag file 
+
+WE now have our inverter file 
+
+Copy the LEF file generated to the picorv32 folder. 
+
+Then run_Synthesis 
+
+You can now find the inverter file we created 
+![Screenshot (86)](https://user-images.githubusercontent.com/19291332/183336768-d8510a3e-e8d2-4464-b23e-09a1e9d2c5c2.png)
+
+The synthesis file now will be created ... note we have a large stack violation 
+
+![Screenshot (87)](https://user-images.githubusercontent.com/19291332/183336880-2170ec4b-7225-4158-9dcc-47a0fbc6b0b5.png)
+
+After running floorplan and getting the LEF file we can open and see the layout in MAGIC.. Note that we can now see the cell we created here 
+
+![Screenshot (90)](https://user-images.githubusercontent.com/19291332/183337010-7a662e3f-5157-4078-b769-0599d0f44fad.png)
+
+
+
+
+
+
 
 
 

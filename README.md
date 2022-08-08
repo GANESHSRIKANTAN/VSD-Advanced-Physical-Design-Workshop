@@ -310,6 +310,49 @@ setup slack is violated. This can be corrected by changing clock frequency ( low
 
 ![Screenshot (104)](https://user-images.githubusercontent.com/19291332/183338365-539f8cf6-c13e-4875-8c91-e98493fe88d1.png)
 
+# DAY 5 : Final steps for RTL2GDS
+
+We start by introduction to routing and routing algoriths 
+
+Maze Algorithm is used to find the best possible route between two units A and B. We take the route that is the shortest between the points and which have the least zig zag patterns , L patterns etc
+
+We also have DRC rules which need to be taken care of 
+
+1. wire width 
+2. Wire Pitch 
+3. Wire spacing
+4. Wire overlap ( which leads to shorting)
+5. Via width 
+6. Via spacing 
+7. Parasitics 
+
+The points 1 to 6 arise due to limitations in the photolithography techniques used to etch 
+
+## POWER DISTRIBUTION NETWORK 
+
+This takes care of the power rails VPWR and VGND
+
+MAkes sure the cells are supplied with power and noise margin is maintained 
+
+`gen_pdn`
+
+![Screenshot (107)](https://user-images.githubusercontent.com/19291332/183340165-534a687b-3abd-4522-9aa2-7904620f65a2.png)
+
+![Screenshot (108)](https://user-images.githubusercontent.com/19291332/183340181-701eee6a-10d0-419e-b9f3-0fd54de5c6b1.png)
+
+
+
+### Routing using TritonRoute 
+
+`run_routing` 
+
+this takes care of routing 
+
+
+![Screenshot (110)](https://user-images.githubusercontent.com/19291332/183340321-ab804980-02a3-4a4d-88f3-84f4e38b8e7d.png)
+
+
+
 
 
 
